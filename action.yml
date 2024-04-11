@@ -9,7 +9,12 @@ runs:
   image: Dockerfile
   entrypoint: "/entrypoint.sh"
   post-entrypoint: "/cleanup.sh"
+  network: ${{ github.event.inputs.net }}
 inputs:
+  net:
+    description: Net for docker container
+    required: false
+    default: .
   args:
     description: Additional arguments to the sonar-scanner
     required: false
