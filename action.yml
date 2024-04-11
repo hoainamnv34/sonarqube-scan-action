@@ -7,11 +7,12 @@ branding:
 runs:
   using: docker
   image: Dockerfile
+  args:
+    - --network
+    - ${{ inputs.net }}
   entrypoint: "/entrypoint.sh"
   post-entrypoint: "/cleanup.sh"
-  args:
-    - '--network'
-    - '${{ inputs.net }}'
+
 inputs:
   net:
     description: Net for docker container
