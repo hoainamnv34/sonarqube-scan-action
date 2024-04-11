@@ -7,9 +7,7 @@ branding:
 runs:
   using: docker
   image: Dockerfile
-  args:
-    - --network
-    - ${{ inputs.net }}
+  network: ${{ inputs.net }}
   entrypoint: "/entrypoint.sh"
   post-entrypoint: "/cleanup.sh"
 
