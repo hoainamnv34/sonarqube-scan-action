@@ -16,7 +16,7 @@ inputs:
   net:
     description: Net for docker container
     required: false
-    default: .
+    default: bridge
   args:
     description: Additional arguments to the sonar-scanner
     required: false
