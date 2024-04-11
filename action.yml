@@ -9,7 +9,9 @@ runs:
   image: Dockerfile
   entrypoint: "/entrypoint.sh"
   post-entrypoint: "/cleanup.sh"
-  network: ${{ github.event.inputs.net }}
+  args:
+    - '--network'
+    - '${{ inputs.net }}'
 inputs:
   net:
     description: Net for docker container
